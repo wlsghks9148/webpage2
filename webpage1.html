@@ -1,30 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Live Camera Stream</title>
+    <title>Live Camera Streaming</title>
 </head>
 <body>
-    <h1>Live Camera Stream</h1>
-    <video id="video" width="640" height="480" autoplay></video>
-    <script>
-        // 비디오 요소 가져오기
-        const video = document.getElementById('video');
-
-        // 카메라 스트리밍 설정
-        async function startCamera() {
-            try {
-                // 카메라에 접근하여 스트림을 가져옵니다
-                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                
-                // 비디오 요소의 srcObject에 스트림을 설정합니다
-                video.srcObject = stream;
-            } catch (error) {
-                console.error("Error accessing camera: ", error);
-            }
-        }
-
-        // 카메라 시작
-        startCamera();
-    </script>
+    <h1>Live Camera Streaming</h1>
+    <img id="video" width="640" height="480" src="http://<your_server_ip>:5000/video_feed" />
 </body>
 </html>
